@@ -4,24 +4,29 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    public ParticleSystem impactFX;
+    public GameObject explosionPrefab;
 
-    private void OnCollisionEnter(Collision collision)
+   void OnCollisionEnter(Collision collision)
     {
-        Instantiate(impactFX, transform.position, Quaternion.identity);
+    ContactPoint contact = collision.contacts[0];
 
-        if(collision.gameObject.tag == "PlayerTank")
-        {
-            collision.gameObject.GetComponent<TankHealth>().takeDamage(20);
-        }
+    Instantiate(
+        explosionPrefab,
+        contact.point,
+        Quaternion.LookRotation(contact.normal)
+    );
 
-        if (collision.gameObject.tag == "EnemyTank")
-        {
-            collision.gameObject.GetComponent<EnemyTankHealth>().takeDamage(20);
-        }
-        Destroy(this.gameObject);
+    if (collision.gameObject.CompareTag("PlayerTank"))
+    {
+        collision.gameObject.GetComponent<TankHealth>().takeDamage(20);
+    }
 
-        
+    if (collision.gameObject.CompareTag("EnemyTank"))
+    {
+        collision.gameObject.GetComponent<EnemyTankHealth>().takeDamage(20);
+    }
 
+    
+    Destroy(gameObject);
     }
 }
