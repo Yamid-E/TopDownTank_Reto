@@ -3098,7 +3098,7 @@ Transform:
   m_GameObject: {fileID: 2059368947}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.34, z: 0}
+  m_LocalPosition: {x: 0, y: -0.03, z: 0}
   m_LocalScale: {x: 1000, y: 1, z: 1000}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3155,14 +3155,6 @@ PrefabInstance:
     - target: {fileID: 5378436382763789656, guid: 6081380f228c7714cb7af18c6a6b2e80, type: 3}
       propertyPath: m_Name
       value: MagicExplosion
-      objectReference: {fileID: 0}
-    - target: {fileID: 5378436382763789656, guid: 6081380f228c7714cb7af18c6a6b2e80, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7258143827790473545, guid: 6081380f228c7714cb7af18c6a6b2e80, type: 3}
-      propertyPath: ShapeModule.arc.mode
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
