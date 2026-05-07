@@ -13,7 +13,14 @@ public class ThrowProjectile : MonoBehaviour
     [Header("VFX")]
     public ParticleSystem muzzleFlash; 
 
+    [Header("Audio")]
+    public AudioSource audioSource;
+    public AudioClip sonidoDisparo;
+    [Range(0f, 5f)] 
+    public float volumenDisparo = 3f; 
     private float nextTimeToFire = 0f;
+    [Header("Animación")]
+    public Animator cañonAnimator;
 
     void Update()
     {
@@ -32,7 +39,6 @@ public class ThrowProjectile : MonoBehaviour
             return;
         }
 
-        // Activamos el destello justo antes o después de instanciar la bala
         if (muzzleFlash != null)
         {
             muzzleFlash.Play();
@@ -45,5 +51,15 @@ public class ThrowProjectile : MonoBehaviour
         );
 
         projInstance.velocity = throwPoint.forward * launchForce;
+
+        if (audioSource != null && sonidoDisparo != null)
+        {
+            audioSource.PlayOneShot(sonidoDisparo, volumenDisparo);
+        }
+
+        if (cañonAnimator != null)
+        {
+            cañonAnimator.SetTrigger("Disparar");
+        }
     }
 }

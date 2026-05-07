@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 7748601592989779388}
   - component: {fileID: 5522417226259337192}
   - component: {fileID: 5079628981076442708}
+  - component: {fileID: 3191907900778500902}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -133,7 +134,7 @@ Rigidbody:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
 --- !u!114 &5079628981076442708
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147,3 +148,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   explosionPrefab: {fileID: 5378436382763789656, guid: 6081380f228c7714cb7af18c6a6b2e80, type: 3}
+--- !u!114 &3191907900778500902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4272812049363675574}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfd8b42d4fb6dd4418f663be62ec2754, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sonidoExplosion: {fileID: 8300000, guid: 62461ed8be29df646b26d60caa541faf, type: 3}
